@@ -1,4 +1,4 @@
-# RandFortran
+# R and Fortran
 Example of simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
