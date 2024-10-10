@@ -23,14 +23,14 @@ Sample Fortran output:
 Simulation Results:
 -------------------
     Number of observations per data set:       100
-                    Number of data sets:      1000
-                Average Mean           :        0.4997445425
-                Average Variance       :        0.0829500662
-                Standard Error of Mean :        0.0008970770
-             Standard Error of Variance:        0.0002355136
-                Minimum Mean           :        0.3943651410
-                Maximum Mean           :        0.5831039347
-                Minimum Variance       :        0.0573404053
-                Maximum Variance       :        0.1075781793
+                    Number of data sets:   1000000
+                Average Mean           :        0.4999585642
+                Average Variance       :        0.0833183208
+                Standard Error of Mean :        0.0000288502
+             Standard Error of Variance:        0.0000075364
+                Minimum Mean           :        0.3597154884
+                Maximum Mean           :        0.6331273418
+                Minimum Variance       :        0.0478706009
+                Maximum Variance       :        0.1232975046
 ```
-On my Windows PC, the Fortran program compiled with `gfortran -O3 -march=native` takes 0.06s, and the R program takes 14s, about 200 times longer.
+On my Windows PC, the Fortran program compiled with `gfortran -O3 -march=native` takes 0.9s, and the R program takes 14s.
