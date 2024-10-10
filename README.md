@@ -1,4 +1,12 @@
 # R and Fortran
+
+Here are some R and Fortran code equivalents, with the R code listed first.
+
+```
+v = c(2, 4, 6)
+v = [2, 4, 6] ! v should be allocatable or already have size 3
+```
+
 Example of simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
