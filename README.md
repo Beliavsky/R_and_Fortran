@@ -3,17 +3,17 @@
 Here are some R and Fortran code equivalents, with the R code listed first.
 
 ```
-v = c(2, 4, 6)
+v = c(2, 4, 6) # create array of 3 integers
 v = [2, 4, 6] ! v should be allocatable or already have size 3
 ```
 
 ```
-v[v > 3]
+v[v > 3] # select elements of v exceeding 3
 pack(v, v > 3)
 ```
 
 ```
-ifelse(condition, 3, 4)
+ifelse(condition, 3, 4) # return 3 if condition is TRUE, otherwise 4
 merge(3, 4, condition)
 ```
 
