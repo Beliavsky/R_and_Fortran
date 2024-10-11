@@ -17,7 +17,7 @@ ifelse(condition, 3, 4) # return 3 if condition is TRUE, otherwise 4
 merge(3, 4, condition)
 ```
 
-There are simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
+This repo has simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
 Sample R output of `xsim_uniform.r`:
