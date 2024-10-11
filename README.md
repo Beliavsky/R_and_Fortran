@@ -76,7 +76,7 @@ Standard deviation of int_data     3.0277
           Product of int_data:    3628800
 ```
 
-and running the R script xr.r gives the same results:
+and running the R script `xr.r` gives the same results:
 
 ```
                        Real data:     1.0000     2.0000     3.0000     4.0000     5.0000     6.0000     7.0000     8.0000     9.0000    10.0000 
