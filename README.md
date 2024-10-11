@@ -12,7 +12,7 @@ v[v > 3]
 pack(v, v > 3)
 ```
 
-Example of simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
+There are simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
 Sample R output of `xsim_uniform.r`:
