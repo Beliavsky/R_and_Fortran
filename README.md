@@ -30,7 +30,7 @@ Sample R output of `xsim_uniform.r`:
     Maximum Variance:                                0.1214716295
 ```
 
-Sample Fortran output:
+Sample Fortran output of `xsim_uniform.f90`:
 
 ```
 Simulation Results:
