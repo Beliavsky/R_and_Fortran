@@ -14,7 +14,7 @@ pack(v, v > 3)
 
 ```
 ifelse(condition, 3, 4)
-merge(3, 4, condition
+merge(3, 4, condition)
 ```
 
 There are simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
