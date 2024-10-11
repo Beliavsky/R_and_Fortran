@@ -15,7 +15,7 @@ pack(v, v > 3)
 Example of simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
-Sample R output:
+Sample R output of `xsim_uniform.r`:
 
 ```
     Number of observations per data set:            100
