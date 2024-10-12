@@ -8,9 +8,23 @@ v = c(2, 4, 6) # R: create array of 3 integers
 ```Fortran
 v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
 ```
+### size of array
+```R
+length(v) # R
+```
+```Fortran
+size(v) ! Fortran
+```
+### dimensions of array
+```R
+dim(v) # R
+```
+```Fortran
+shape(v) ! Fortran
+```
 ### sum of array
 ```R
-sum(v) # same in Fortran
+sum(v) # R -- same in Fortran
 ```
 ### product of array
 ```R
