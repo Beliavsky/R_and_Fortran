@@ -16,7 +16,11 @@ pack(v, v > 3)
 ifelse(condition, 3, 4) # return 3 if condition is TRUE, otherwise 4
 merge(3, 4, condition)
 ```
-
+```
+x = array(0.0, c(5, 6, 7)) # create 3-D array of dimensions [5, 6, 7] and set values to 0.0
+real(kind=dp), allocatable :: x(:, :, :) ! dp is a double precision kind parameter
+allocate(x(5, 6, 7), source = 0.0)
+```
 This repo has simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
