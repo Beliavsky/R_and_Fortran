@@ -33,6 +33,13 @@ prod(v) # R
 ```Fortran
 product(v) ! Fortran
 ```
+### maximum of array
+```R
+max(v) # R
+```
+```Fortran
+maxval(v) ! Fortran
+```
 ### select elements
 ```R
 v[v > 3] # R: select elements of v exceeding 3
