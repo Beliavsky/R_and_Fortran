@@ -18,6 +18,7 @@ merge(3, 4, condition)
 ```
 ```
 x = array(0.0, c(5, 6, 7)) # create 3-D array of dimensions [5, 6, 7] and set values to 0.0
+! Fortran below
 real(kind=dp), allocatable :: x(:, :, :) ! dp is a double precision kind parameter
 allocate(x(5, 6, 7), source = 0.0)
 ```
