@@ -8,6 +8,13 @@ v = c(2, 4, 6) # R: create array of 3 integers
 ```Fortran
 v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
 ```
+### access array element
+```R
+v[2, 1, 5] # R
+```
+```Fortran
+v(2, 1, 5) ! Fortran
+```
 ### size of array
 ```R
 length(v) # R
