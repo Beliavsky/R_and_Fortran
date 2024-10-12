@@ -26,7 +26,7 @@ v[v > 3] # R: select elements of v exceeding 3
 ```Fortran
 pack(v, v > 3) ! Fortran
 ```
-### create a multidimensional array
+### create array of zeros
 ```R
 x = array(0.0, c(5, 6, 7)) # R: create 3-D array of dimensions [5, 6, 7] and set values to 0.0
 ```
