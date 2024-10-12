@@ -8,6 +8,17 @@ v = c(2, 4, 6) # R: create array of 3 integers
 ```Fortran
 v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
 ```
+### sum of array
+```R
+sum(v) # same in Fortran
+```
+### product of array
+```R
+prod(v) # R
+```
+```Fortran
+product(v) ! Fortran
+```
 ### select elements
 ```R
 v[v > 3] # R: select elements of v exceeding 3
