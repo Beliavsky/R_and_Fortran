@@ -1,27 +1,21 @@
 # R and Fortran
 
 Here are some R and Fortran code equivalents, with the R code listed first.
-
+### create array
 ```R
 v = c(2, 4, 6) # R: create array of 3 integers
 ```
 ```Fortran
 v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
 ```
-
+### select elements
 ```R
 v[v > 3] # R: select elements of v exceeding 3
 ```
 ```Fortran
 pack(v, v > 3) ! Fortran
 ```
-
-```R
-ifelse(condition, 3, 4) # R: return 3 if condition is TRUE, otherwise 4
-```
-```Fortran
-merge(3, 4, condition) ! Fortran
-```
+### create a multidimensional array
 ```R
 x = array(0.0, c(5, 6, 7)) # R: create 3-D array of dimensions [5, 6, 7] and set values to 0.0
 ```
@@ -29,6 +23,13 @@ x = array(0.0, c(5, 6, 7)) # R: create 3-D array of dimensions [5, 6, 7] and set
 ! Fortran
 real(kind=dp), allocatable :: x(:, :, :) ! dp is a double precision kind parameter
 allocate(x(5, 6, 7), source = 0.0)
+```
+### choose a value
+```R
+ifelse(condition, 3, 4) # R: return 3 if condition is TRUE, otherwise 4
+```
+```Fortran
+merge(3, 4, condition) ! Fortran
 ```
 
 This repo has simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
