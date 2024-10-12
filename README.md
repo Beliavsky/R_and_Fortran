@@ -3,25 +3,34 @@
 Here are some R and Fortran code equivalents, with the R code listed first.
 
 ```
-v = c(2, 4, 6) # create array of 3 integers
-v = [2, 4, 6] ! v should be allocatable or already have size 3
+v = c(2, 4, 6) # R: create array of 3 integers
+```
+```Fortran
+v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
 ```
 
 ```
-v[v > 3] # select elements of v exceeding 3
-pack(v, v > 3)
+v[v > 3] # R: select elements of v exceeding 3
+```
+```Fortran
+pack(v, v > 3) ! Fortran
 ```
 
 ```
-ifelse(condition, 3, 4) # return 3 if condition is TRUE, otherwise 4
-merge(3, 4, condition)
+ifelse(condition, 3, 4) # R: return 3 if condition is TRUE, otherwise 4
+```
+```Fortran
+merge(3, 4, condition) ! Fortran
 ```
 ```
-x = array(0.0, c(5, 6, 7)) # create 3-D array of dimensions [5, 6, 7] and set values to 0.0
-! Fortran below
+x = array(0.0, c(5, 6, 7)) # R: create 3-D array of dimensions [5, 6, 7] and set values to 0.0
+```
+```Fortran
+! Fortran
 real(kind=dp), allocatable :: x(:, :, :) ! dp is a double precision kind parameter
 allocate(x(5, 6, 7), source = 0.0)
 ```
+
 This repo has simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
