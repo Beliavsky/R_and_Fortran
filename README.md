@@ -1,6 +1,34 @@
 # R and Fortran
 
 Here are some R and Fortran code equivalents, with the R code listed first.
+### loops, conditionals, and output
+```R
+# R
+for (i in -1:1) {
+	if (i > 0) {
+	  cat(i, "positive\n")
+	} else if (i == 0) {
+	  cat(i, "zero\n")
+	} else {
+	  cat(i, "negative\n")
+	}
+}
+```
+```Fortran
+! Fortran
+implicit none
+integer :: i
+do i=-1,1
+   if (i > 0) then
+      print*,i, "positive"
+   else if (i == 0) then
+      print*,i, "zero"
+   else
+      print*,i, "negative"
+   end if
+end do
+end
+```
 ### create array
 ```R
 v = c(2, 4, 6) # R: create array of 3 integers
