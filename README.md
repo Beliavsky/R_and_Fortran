@@ -98,7 +98,13 @@ ifelse(condition, 3, 4) # R: return 3 if condition is TRUE, otherwise 4
 ```Fortran
 merge(3, 4, condition) ! Fortran
 ```
-
+### import from R library or Fortran module
+```R
+library(foo) # R
+```
+```Fortran
+use foo ! Fortran
+```
 This repo has simple R and Fortran programs that compute the means and variances of sets of uniform random variates and
 some statistics on those quantities.
 
