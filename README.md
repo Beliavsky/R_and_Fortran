@@ -135,8 +135,6 @@ Sample R output of `xsim_uniform.r`:
 Sample Fortran output of `xsim_uniform.f90`:
 
 ```
-Simulation Results:
--------------------
     Number of observations per data set:       100
                     Number of data sets:   1000000
                 Average Mean           :        0.4999585642
