@@ -75,12 +75,21 @@ max(v) # R
 ```Fortran
 maxval(v) ! Fortran
 ```
-### select elements
+### select elements satisfying a condition
 ```R
 v[v > 3] # R: select elements of v exceeding 3
 ```
 ```Fortran
 pack(v, v > 3) ! Fortran
+```
+### select the first row or column of a 2-D array
+```R
+x[1, ] # R: 1st row
+x[, 1] # 1st column
+```
+```Fortran
+x(1, :) ! Fortran: 1st row
+x(:, 1) ! 1st column
 ```
 ### create array of zeros
 ```R
