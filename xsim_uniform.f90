@@ -1,8 +1,8 @@
 ! Description: Simulate niter sets of n uniformly distributed random numbers
-!              and compute the standard error of the estimated means and variances.
-!              Also, print the average, minimum, and maximum of the computed means and variances
-!              with aligned labels and decimal points. Additionally, print the number of
-!              observations per data set and the number of data sets.
+!    and compute the standard error of the estimated means and variances. Also, print 
+!    the average, minimum, and maximum of the computed means and variances with
+!    aligned labels and decimal points. Additionally, print the number of 
+!    observations per data set and the number of data sets.
 
 module SimulationModule
     implicit none
