@@ -1,4 +1,3 @@
-! File: simulation_corrected_fmt_minval_maxval.f90
 ! Description: Simulate niter sets of n uniformly distributed random numbers
 !              and compute the standard error of the estimated means and variances.
 !              Also, print the average, minimum, and maximum of the computed means and variances
