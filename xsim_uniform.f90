@@ -10,7 +10,6 @@ module SimulationModule
     ! Define double precision
     integer, parameter :: dp = kind(1.0d0)
     public :: dp, compute_mean, compute_stddev, simulate_uniform_se
-
 contains
 
     ! Function to compute the mean of an array
@@ -18,7 +17,6 @@ contains
         real(kind=dp), intent(in) :: data(:)
         integer, intent(in) :: n
         real(kind=dp) :: mean_val
-
         mean_val = sum(data) / real(n, kind=dp)
     end function compute_mean
 
@@ -28,7 +26,6 @@ contains
         integer, intent(in) :: n
         real(kind=dp), intent(in) :: mean_val
         real(kind=dp) :: stddev
-
         if (n > 1) then
             stddev = sqrt( sum( (data - mean_val)**2 ) / real(n - 1, kind=dp) )
         else
@@ -37,36 +34,24 @@ contains
     end function compute_stddev
 
     ! Subroutine to perform the simulation
-    subroutine simulate_uniform_se(n, niter, &
-        avg_mean, avg_variance, se_mean, se_variance, &
-        min_mean, max_mean, min_variance, max_variance)
+    subroutine simulate_uniform_se(n, niter, avg_mean, avg_variance, se_mean, &
+        se_variance, min_mean, max_mean, min_variance, max_variance)
 
         ! Input arguments
         integer, intent(in) :: n        ! Number of random numbers in each set
         integer, intent(in) :: niter    ! Number of iterations
 
         ! Output arguments
-        real(kind=dp), intent(out) :: avg_mean
-        real(kind=dp), intent(out) :: avg_variance
-        real(kind=dp), intent(out) :: se_mean
-        real(kind=dp), intent(out) :: se_variance
-        real(kind=dp), intent(out) :: min_mean
-        real(kind=dp), intent(out) :: max_mean
-        real(kind=dp), intent(out) :: min_variance
-        real(kind=dp), intent(out) :: max_variance
+        real(kind=dp), intent(out) :: avg_mean, avg_variance, se_mean, &
+           se_variance, min_mean, max_mean, min_variance, max_variance
 
         ! Local variables
-        real(kind=dp), allocatable :: means(:)
-        real(kind=dp), allocatable :: variances(:)
-        real(kind=dp), allocatable :: data(:)
-        real(kind=dp) :: mean_val, var_val
-        real(kind=dp) :: stddev_means, stddev_vars
+        real(kind=dp), allocatable :: means(:), variances(:), data(:)
+        real(kind=dp) :: mean_val, var_val, stddev_means, stddev_vars
         integer :: i
 
         ! Allocate arrays to store means and variances
-        allocate(means(niter))
-        allocate(variances(niter))
-        allocate(data(n))
+        allocate(means(niter), variances(niter), data(n))
 
         ! Seed the random number generator (optional)
         call random_seed()
@@ -75,13 +60,10 @@ contains
         do i = 1, niter
             ! Generate n uniformly distributed random numbers in [0,1)
             call random_number(data)
-
             ! Compute mean of the current set
             mean_val = compute_mean(data, n)
-
             ! Compute variance of the current set
             var_val = compute_stddev(data, n, mean_val)**2
-
             ! Store the computed mean and variance
             means(i) = mean_val
             variances(i) = var_val
@@ -104,26 +86,14 @@ contains
         max_mean = maxval(means)
         min_variance = minval(variances)
         max_variance = maxval(variances)
-
-        ! Deallocate arrays
-        deallocate(data)
-        deallocate(means)
-        deallocate(variances)
-
     end subroutine simulate_uniform_se
-
 end module SimulationModule
 
-program MainProgram
+program main
     use SimulationModule
     implicit none
-
     ! Define format string parameters
-    character(len=100), parameter :: header_fmt   = "(A)"
-    character(len=100), parameter :: int_fmt      = "(A40, I10)"
-    character(len=100), parameter :: real_fmt     = "(A40, F20.10)"
-    character(len=100), parameter :: separator_fmt= "(A)"
-
+    character(len=*), parameter :: int_fmt = "(A40, I10)", real_fmt = "(A40, F20.10)"
     ! Variables
     integer :: n, niter
     real(kind=dp) :: avg_mean, avg_variance, se_mean, se_variance
@@ -131,20 +101,15 @@ program MainProgram
 
     ! Set parameters for simulation
     n = 100          ! Number of random numbers in each set
-    niter = 1000     ! Number of iterations
+    niter = 10**6    ! Number of iterations
 
     ! Call the simulation subroutine
-    call simulate_uniform_se(n, niter, &
-        avg_mean, avg_variance, se_mean, se_variance, &
-        min_mean, max_mean, min_variance, max_variance)
+    call simulate_uniform_se(n, niter, avg_mean, avg_variance, se_mean, &
+        se_variance, min_mean, max_mean, min_variance, max_variance)
 
     ! Print the results with aligned formatting
-    write(*, header_fmt) "Simulation Results:"
-    write(*, separator_fmt) "-------------------"
-
     write(*, int_fmt) "Number of observations per data set:", n
     write(*, int_fmt) "Number of data sets:", niter
-
     write(*, real_fmt) "Average Mean           :", avg_mean
     write(*, real_fmt) "Average Variance       :", avg_variance
     write(*, real_fmt) "Standard Error of Mean :", se_mean
@@ -153,5 +118,4 @@ program MainProgram
     write(*, real_fmt) "Maximum Mean           :", max_mean
     write(*, real_fmt) "Minimum Variance       :", min_variance
     write(*, real_fmt) "Maximum Variance       :", max_variance
-
-end program MainProgram
+end program main
