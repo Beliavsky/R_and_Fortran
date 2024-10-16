@@ -68,6 +68,16 @@ v[2, 1, 5] # R
 ```Fortran
 v(2, 1, 5) ! Fortran
 ```
+### negative indices
+The lower bounds of R arrays are always 1. A negative array index means that the index is excluded.
+```R
+# R
+x = c(10, 20, 30)
+cat(x[-2], "\n")
+# output:
+# 10 30
+```
+Fortran arrays have lower bounds of 1 by default, but this can be overridden. A negative index has no special meaning.
 ### size of array
 ```R
 length(v) # R
@@ -93,12 +103,12 @@ prod(v) # R
 ```Fortran
 product(v) ! Fortran
 ```
-### maximum of array
+### maximum and minimum of array
 ```R
-max(v) # R
+max(v), min(v) # R
 ```
 ```Fortran
-maxval(v) ! Fortran
+maxval(v), minval(v) ! Fortran
 ```
 ### select elements satisfying a condition
 ```R
