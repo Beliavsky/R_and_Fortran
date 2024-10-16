@@ -1,6 +1,26 @@
 # R and Fortran
 
-Here are some R and Fortran code equivalents, with the R code listed first.
+Here are some R and Fortran code equivalents, with the R code listed first. The R and Fortran comment characters are `#` and `!`.
+### sequence
+```R
+# R
+-2:3 # -2 -1 0 1 2 3
+```
+```Fortran
+! Fortran
+integer :: i
+[(i, i=-2, 3)] ! implied do-loop
+```
+### repeat a value
+```R
+# R
+rep(2, 3) # 2 2 2
+```
+```Fortran
+! Fortran
+integer :: i
+[(2, i=1, 3)]
+```
 ### loops, conditionals, and output
 ```R
 # R
@@ -65,10 +85,13 @@ end
 ```
 ### create array
 ```R
-v = c(2, 4, 6) # R: create array of 3 integers
+v = c(2, 4, 6) # R create array of 3 floats
+v = c(2L, 4L, 6L) # create array of 3 integers
 ```
 ```Fortran
-v = [2, 4, 6] ! Fortran: v should be allocatable or already have size 3
+! Fortran
+integer, allocatable :: v(:)
+v = [2, 4, 6]
 ```
 ### access array element
 ```R
@@ -184,15 +207,6 @@ print*, x, y, .not. x, .not. y, x .and. y, x .or. y
 end
 ! output:
 ! T F F T F T
-```
-### repeat a value
-```R
-# R
-rep(2, 3) # 2 2 2
-```
-```Fortran
-integer :: i
-[(2, i=1, 3)] ! implied do-loop
 ```
 ### concatenate strings
 ```R
