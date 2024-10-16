@@ -185,6 +185,17 @@ end
 ! output:
 ! T F F T F T
 ```
+### concatenate strings
+```R
+# R
+paste("ab", "cd") # gives "ab cd"
+paste0("ab", "cd") # gives "abcd"
+```
+```Fortran
+! Fortran
+"ab" // " " // "cd"
+"ab" // "cd"
+```
 ### import from R library or Fortran module
 ```R
 library(foo) # R
