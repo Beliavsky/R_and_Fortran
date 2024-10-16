@@ -110,6 +110,21 @@ max(v), min(v) # R
 ```Fortran
 maxval(v), minval(v) ! Fortran
 ```
+### location of maximum and minimum of array
+```R
+# R
+v = c(3, 8, 2, 10, 5)
+cat(which.max(v), which.min(v), "\n")
+# output:
+# 4 3
+```
+```Fortran
+! Fortran
+integer :: v(5)
+v = [3, 8, 2, 10, 5]
+print*,maxloc(v, dim=1), minloc(v, dim=1)
+end
+``` 
 ### select elements satisfying a condition
 ```R
 v[v > 3] # R: select elements of v exceeding 3
