@@ -185,6 +185,15 @@ end
 ! output:
 ! T F F T F T
 ```
+### repeat a value
+```R
+# R
+rep(2, 3) # 2 2 2
+```
+```Fortran
+integer :: i
+[(2, i=1, 3)] ! implied do-loop
+```
 ### concatenate strings
 ```R
 # R
