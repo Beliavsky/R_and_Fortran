@@ -107,6 +107,25 @@ ifelse(condition, 3, 4) # R: return 3 if condition is TRUE, otherwise 4
 ```Fortran
 merge(3, 4, condition) ! Fortran
 ```
+### Boolean variables and operators: (! & |) in R, (.not. .and. .or.) in Fortran
+```R
+# R
+x = TRUE
+y = FALSE
+cat(x, y, !x, !y, x & y, x | y, "\n")
+# output:
+# TRUE FALSE FALSE TRUE FALSE TRUE
+```
+```Fortran
+! Fortran
+logical :: x, y
+x = .true.
+y = .false.
+print*, x, y, .not. x, .not. y, x .and. y, x .or. y
+end
+! output:
+! T F F T F T
+```
 ### import from R library or Fortran module
 ```R
 library(foo) # R
