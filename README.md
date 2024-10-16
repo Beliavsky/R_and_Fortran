@@ -29,6 +29,31 @@ do i=-1,1
 end do
 end
 ```
+### while loop
+```R
+# R
+sum = 0
+i = 0
+while (sum <= 10) {
+  i = i + 1
+  sum = sum + i
+}
+cat("Sum of 1 to", i, "is", sum, "\n")
+# output:
+# Sum of 1 to 5 is 15
+```
+```Fortran
+! Fortran
+integer :: i, isum
+isum = 0
+i = 0
+do while (isum <= 10)
+   i = i + 1
+   isum = isum + i
+end do
+print*,"Sum of 1 to", i, "is", isum
+end
+```
 ### create array
 ```R
 v = c(2, 4, 6) # R: create array of 3 integers
