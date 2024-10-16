@@ -26,7 +26,7 @@ integer :: i
 # R
 for (i in -1:1) {
 	if (i > 0) {
-	  cat(i, "positive\n")
+	  cat(i, "positive\n") # \n is needed to get a new line after the output
 	} else if (i == 0) {
 	  cat(i, "zero\n")
 	} else {
@@ -263,6 +263,26 @@ Conj(z) # note capitalization
 ```Fortran
 ! Fortran
 congj(z)
+```
+### define and call a function
+```R
+# R
+twice <- function(x) {
+  return(2 * x)
+}
+cat(twice(c(3.0, 4.0)), "\n")
+# output
+# 6 8
+```
+```Fortran
+! Fortran
+elemental real function twice(x)
+! elemental means the function can take a scalar or array input and return the same, like the R function
+real, intent(in) :: x
+twice = 2*x
+end function twice
+print*,twice([3.0, 4.0])
+end
 ```
 ### import from R library or Fortran module
 ```R
