@@ -93,6 +93,33 @@ v = c(2L, 4L, 6L) # create array of 3 integers
 integer, allocatable :: v(:)
 v = [2, 4, 6]
 ```
+### matrix transpose
+```R
+# R
+t(x)
+```
+```Fortran
+! Fortran
+transpose(x)
+```
+### matrix multiplication
+```R
+# R
+a %*% b
+```
+```Fortran
+! Fortran
+matmul(a, b)
+```
+### dot product
+```R
+# R
+a %*% b
+```
+```Fortran
+! Fortran
+dot_product(a, b)
+```
 ### access array element
 ```R
 v[2, 1, 5] # R
@@ -218,6 +245,24 @@ paste0("ab", "cd") # gives "abcd"
 ! Fortran
 "ab" // " " // "cd"
 "ab" // "cd"
+```
+### complex numbers
+```R
+# R
+3.0 + 4.0i
+```
+```Fortran
+! Fortran
+(3.0d0, 4.0d0) ! d0 is used to give double precision, matching R
+```
+### complex conjugate
+```R
+# R
+Conj(z) # note capitalization
+```
+```Fortran
+! Fortran
+congj(z)
 ```
 ### import from R library or Fortran module
 ```R
