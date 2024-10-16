@@ -54,6 +54,15 @@ end do
 print*,"Sum of 1 to", i, "is", isum
 end
 ```
+### exponentiation
+```R
+# R
+2^3, 2**3 # ^ is preferred, but both are valid
+```
+```Fortran
+! Fortran
+2**3
+```
 ### create array
 ```R
 v = c(2, 4, 6) # R: create array of 3 integers
