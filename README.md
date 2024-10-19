@@ -287,7 +287,7 @@ end
 ### create a constructor for a new data type and a function that acts on it
 ```R
 # R
-# Define a constructor function for the class
+# Define a constructor function for the class RightTriangle
 RightTriangle = function(x, y) {
   return(list(x = x, y = y))  # Create a list with attributes
 }
@@ -302,7 +302,7 @@ cat(hypotenuse(RightTriangle(1.5, 2.0)), "\n") # output: 2.5
 ! Fortran
 program main
 implicit none
-! define type
+! define type RightTriangle
 type :: RightTriangle
    real :: x, y
 end type
