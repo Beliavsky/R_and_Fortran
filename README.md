@@ -207,7 +207,7 @@ x = array(0.0, c(5, 6, 7)) # R: create 3-D array of dimensions [5, 6, 7] and set
 ```Fortran
 ! Fortran
 real(kind=dp), allocatable :: x(:, :, :) ! dp is a double precision kind parameter
-allocate(x(5, 6, 7), source = 0.0)
+allocate(x(5, 6, 7), source = 0.0_dp)
 ```
 ### choose a value
 ```R
@@ -283,6 +283,37 @@ twice = 2*x
 end function twice
 print*,twice([3.0, 4.0])
 end
+```
+### create a constructor for a new data type and a function that acts on it
+```R
+# R
+# Define a constructor function for the class
+RightTriangle = function(x, y) {
+  return(list(x = x, y = y))  # Create a list with attributes
+}
+# Define the hypotenuse method
+hypotenuse = function(a) {
+	return(sqrt(a$x^2 + a$y^2))
+}
+# Invoke it on an instance of RightTriangle
+cat(hypotenuse(RightTriangle(1.5, 2.0)), "\n") # output: 2.5
+```
+```Fortran
+! Fortran
+program main
+implicit none
+! define type
+type :: RightTriangle
+   real :: x, y
+end type
+print*,hypotenuse(RightTriangle(1.5, 2.0)) ! output: 2.5
+contains
+! define hypotenuse function acting on type
+real function hypotenuse(tri)
+type(RightTriangle) :: tri
+hypotenuse = sqrt(tri%x**2 + tri%y**2)
+end function
+end program main
 ```
 ### import from R library or Fortran module
 ```R
