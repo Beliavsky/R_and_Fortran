@@ -1,3 +1,5 @@
+# Simulate multivariate normal data, add outliers, and identify them using the Mahalanobis distance
+
 library(MASS)
 
 simulate_bivariate_normal <- function(n, p, mu = c(0, 0), sigma = c(1, 1)) {
